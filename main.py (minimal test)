@@ -1,0 +1,14 @@
+import os
+from aiogram import Bot, Dispatcher, types, executor
+
+TOKEN = os.getenv("8729939298:AAGhNmMU40lvPVE9O-5lziRg0GA3FLxU0vY")
+
+bot = Bot(token=TOKEN)
+dp = Dispatcher(bot)
+
+@dp.message_handler(commands=['start'])
+async def start(message: types.Message):
+    await message.answer("🔥 Bot Renderda ishlayapti!")
+
+if __name__ == "__main__":
+    executor.start_polling(dp, skip_updates=True)
